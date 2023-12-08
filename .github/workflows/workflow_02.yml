@@ -8,9 +8,7 @@ on:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
-    if: github.event.client_payload.workflow == 'workflow_02'
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - run: echo "Triggering Workflow 2"
-      # Add your other steps here
+      - run: echo "Triggering Workflow_02"
