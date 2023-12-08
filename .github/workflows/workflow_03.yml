@@ -1,0 +1,9 @@
+name: workflow_03
+on: repository_dispatch
+jobs:
+  cypress-run_02:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Triggering Wokflow 3"
+      - name: Checkout
+        uses: actions/checkout@v2
