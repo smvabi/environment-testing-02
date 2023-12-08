@@ -1,9 +1,22 @@
 name: workflow_02
-on: repository_dispatch
+
+on:
+  repository_dispatch:
+    types:
+      - trigger_workflow_event
+
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Triggering Wokflow 2"
+      - name: Check if triggered by specific workflow
+        run: |
+          if [ "${{ github.event.client_payload.workflow }}" != "workflow_02" ]; then
+            echo "This workflow was not triggered by the desired workflow. Exiting..."
+            exit 0
+          fi
+          
+          # Continue with the rest of your workflow steps here
       - name: Checkout
         uses: actions/checkout@v2
+      # Add your other steps here
