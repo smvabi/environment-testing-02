@@ -1,5 +1,5 @@
 name: workflow_03
-on: repository_dispatch
+on: workflow_dispatch
 jobs:
   cypress-run_02:
     runs-on: ubuntu-latest
