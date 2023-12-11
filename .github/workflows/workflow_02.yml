@@ -9,7 +9,7 @@ name: workflow_02
 #         uses: actions/checkout@v2
 
 on: 
-  repository_dispatch
+  repository_dispatch:
     types: ["test"]
 jobs:
   cypress-run_02:
